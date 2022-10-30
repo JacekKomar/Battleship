@@ -1,0 +1,20 @@
+.menu {
+  background-color: bisque;
+  height: 200px;
+  width: auto;
+}
+body {
+  background-color: rgb(241, 248, 142);
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.menu-text {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
