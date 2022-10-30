@@ -3,3 +3,12 @@
   height: 200px;
   width: auto;
 }
+
+.imagesColor {
+  background-color: rgba(0, 0, 0, 0.925);
+}
+
+.font {
+  font-family: arial;
+  font-size: 24px;
+}
