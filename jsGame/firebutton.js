@@ -21,4 +21,6 @@ function handleKeyPress(e) {
     fireButton.click();
     return false;
   }
+
+  model.generateShipLocations();
 }

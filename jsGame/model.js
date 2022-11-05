@@ -5,9 +5,9 @@ var model = {
   shipSunk: 0,
 
   ships: [
-    { locations: ["10", "20", "30"], hits: ["", "", ""] },
-    { locations: ["32", "33", "34"], hits: ["", "", ""] },
-    { locations: ["63", "64", "65"], hits: ["", "", ""] },
+    { locations: [0, 0, 0], hits: ["", "", ""] },
+    { locations: [0, 0, 0], hits: ["", "", ""] },
+    { locations: [0, 0, 0], hits: ["", "", ""] },
   ],
 
   fire: function (guess) {
