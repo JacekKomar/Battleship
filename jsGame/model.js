@@ -13,10 +13,31 @@ var model = {
   fire: function (guess) {
     for (var i = 0; i < this.numShips; i++) {
       var ship = this.ship[i];
-      locations = ship.locations;
-      var index = locations.indexOf(guess);
+
+      var index = ship.locations.indexOf(guess);
       if (index >= 0) {
+        ship.hits[index] = "hit";
+        visualViewport.displayHit(guess);
+        visualViewport.displayMessage("TRAFIONY!");
+        if (this.isSunk(ship)) {
+          visualViewport.displayMessage("Zatopiłeś mój okręt !");
+          this.shipSunk++;
+        }
+
+        return true;
       }
+    }
+    visualViewport.displayMiss(guess);
+    visualViewport.displayMessage("Spudłowałeś.");
+    return false;
+  },
+
+  isSunk: function (ship) {
+    for (var i = 0; i < this.shipLength; i++) {
+      if (ship.hits[i] !== "hit") {
+        return false;
+      }
+      return true;
     }
   },
 };
