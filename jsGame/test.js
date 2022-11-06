@@ -1,33 +1,3 @@
-var view = {
-  displayMessage: function (msg) {
-    var messageArea = document.getElementById("messageArea");
-    messageArea.innerHTML = msg;
-  },
-
-  displayHit: function (location) {
-    var cell = document.getElementById(location);
-    cell.setAttribute("class", "hit");
-  },
-
-  displayMiss: function (location) {
-    var cell = document.getElementById(location);
-    cell.setAttribute("class", "miss");
-  },
-};
-view.displayMiss("00");
-view.displayHit("34");
-view.displayMiss("55");
-view.displayHit("12");
-view.displayMiss("25");
-view.displayHit("26");
-view.displayMessage("test");
-view.displayMessage("test");
-view.displayMessage("test");
-view.displayMessage("test");
-view.displayMessage("test");
-view.displayMessage("test");
-view.displayMessage("test");
-
 var model = {
   boardSize: 7,
   numShips: 3,
@@ -42,33 +12,38 @@ var model = {
 
   fire: function (guess) {
     for (var i = 0; i < this.numShips; i++) {
-      var ship = this.ship[i];
+      var ship = this.ships[i];
       var index = ship.locations.indexOf(guess);
-      if (index >= 0) {
-        ship.hits[index] = "hit";
-        view.displayHit(guess);
-        view.displayMessage("TRAFIONY!");
-        if (this.isSunk(ship)) {
-          view.displayMessage("Zatopiłeś mój okręt !");
-          this.shipSunk++;
-        }
 
+      if (ship.hits[index] === "Strzał") {
+        view.displayMessage("Już tu strzeliłeś!");
+        return true;
+      } else if (index >= 0) {
+        ship.hits[index] = "Strzał";
+        view.displayHit(guess);
+        view.displayMessage("Strzał !");
+
+        if (this.isSunk(ship)) {
+          view.displayMessage("Zatopiłeś mój okręt!");
+          this.shipsSunk++;
+        }
         return true;
       }
     }
     view.displayMiss(guess);
-    view.displayMessage("Spudłowałeś.");
+    view.displayMessage("Pudło.");
     return false;
   },
 
   isSunk: function (ship) {
     for (var i = 0; i < this.shipLength; i++) {
-      if (ship.hits[i] !== "hit") {
+      if (ship.hits[i] !== "Trafienie") {
         return false;
       }
-      return true;
     }
+    return true;
   },
+
   generateShipLocations: function () {
     var locations;
     for (var i = 0; i < this.numShips; i++) {
@@ -77,6 +52,8 @@ var model = {
       } while (this.collision(locations));
       this.ships[i].locations = locations;
     }
+    console.log("Statki :");
+    console.log(this.ships);
   },
 
   generateShip: function () {
@@ -84,9 +61,9 @@ var model = {
     var row, col;
     if (direction === 1) {
       row = Math.floor(Math.random() * this.boardSize);
-      col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+      col = Math.floor(Math.random() * (this.boardSize - this.shipLength + 1));
     } else {
-      row = Math.floor(Math.random() * this.boardSize - this.shipLength);
+      row = Math.floor(Math.random() * (this.boardSize - this.shipLength + 1));
       col = Math.floor(Math.random() * this.boardSize);
     }
 
@@ -115,24 +92,40 @@ var model = {
   },
 };
 
-function init() {
-  var fireButton = document.getElementById("fireButton");
-  fireButton.onclick = handleFireButton;
-  var guessInput = document.getElementById("guessInput");
-  guessInput.onkeypress = handleKeyPress;
-}
+var view = {
+  displayMessage: function (msg) {
+    var messageArea = document.getElementById("messageArea");
+    messageArea.innerHTML = msg;
+  },
 
-/* function handleFireButton() {
-      var guessInput = document.getElementById("guessInput");
-      var guess = guessInput.Value;
-      controller.processGuess(guess);
-    
-      guessInput.value = ""; 
-    } */
+  displayHit: function (location) {
+    var cell = document.getElementById(location);
+    cell.setAttribute("class", "hit");
+  },
 
-model.generateShipLocations();
+  displayMiss: function (location) {
+    var cell = document.getElementById(location);
+    cell.setAttribute("class", "miss");
+  },
+};
 
-window.onload = init;
+var controller = {
+  guesses: 0,
+
+  processGuess: function (guess) {
+    var location = parseGuess(guess);
+    if (location) {
+      this.guesses++;
+      var hit = model.fire(location);
+
+      if (hit && model.shipsSunk === model.numShips) {
+        view.displayMessage(
+          "Zatopiłeś wszystkie moje okręty, w " + this.guesses + "próbach"
+        );
+      }
+    }
+  },
+};
 
 function parseGuess(guess) {
   var alphabet = ["A", "B", "C", "D", "F", "G"];
@@ -160,20 +153,32 @@ function parseGuess(guess) {
   return null;
 }
 
-var controller = {
-  guesses: 0,
+function handleFireButton() {
+  var guessInput = document.getElementById("guessInput");
+  var guess = guessInput.value.toUpperCase();
+  controller.processGuess(guess);
+  guessInput.value = "";
+}
 
-  processGuess: function (guess) {
-    var location = parseGuess(guess);
-    if (location) {
-      this.guesses++;
-      var hit = model.fire(location);
+function handleKeyPress(e) {
+  var fireButton = document.getElementById("fireButton");
 
-      if (hit && model.shipsSunk === model.numShips) {
-        view.displayMessage(
-          "Zatopiłeś wszystkie moje okręty, w " + this.guesses + "próbach"
-        );
-      }
-    }
-  },
-};
+  e = e || window.event;
+
+  if (e.keyCode === 13) {
+    fireButton.click();
+    return false;
+  }
+}
+
+window.onload = init;
+
+function init() {
+  var fireButton = document.getElementById("fireButton");
+  fireButton.onclick = handleFireButton;
+
+  var guessInput = document.getElementById("guessInput");
+  guessInput.onkeypress = handleKeyPress;
+
+  model.generateShipLocations();
+}
