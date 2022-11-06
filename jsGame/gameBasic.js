@@ -15,11 +15,11 @@ var model = {
       var ship = this.ships[i];
       var index = ship.locations.indexOf(guess);
 
-      if (ship.hits[index] === "Trafiłeś !") {
-        view.displayMessage("Już tu strzeliłeś!");
+      if (ship.hits[index] === "hit") {
+        view.displayMessage("TRAFIONY !");
         return true;
       } else if (index >= 0) {
-        ship.hits[index] = "Trafiłeś ! ";
+        ship.hits[index] = "hit";
         view.displayHit(guess);
         view.displayMessage("Trafiłeś !");
 
@@ -37,7 +37,7 @@ var model = {
 
   isSunk: function (ship) {
     for (var i = 0; i < this.shipLength; i++) {
-      if (ship.hits[i] !== "Trafiłeś !") {
+      if (ship.hits[i] !== "hit") {
         return false;
       }
     }
@@ -128,7 +128,7 @@ var controller = {
 };
 
 function parseGuess(guess) {
-  var alphabet = ["A", "B", "C", "D", "F", "G"];
+  var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
 
   if (guess === null || guess.length !== 2) {
     alert("Ups, proszę wpisać literę i cyfrę");
