@@ -2,7 +2,7 @@ var model = {
   boardSize: 7,
   numShips: 3,
   shipLength: 3,
-  shipSunk: 0,
+  shipsSunk: 0,
 
   ships: [
     { locations: [0, 0, 0], hits: ["", "", ""] },
@@ -117,10 +117,9 @@ var controller = {
     if (location) {
       this.guesses++;
       var hit = model.fire(location);
-
       if (hit && model.shipsSunk === model.numShips) {
         view.displayMessage(
-          "Zatopiłeś wszystkie okręty, po " + this.guesses + "próbach"
+          "Zatopiłeś wszystkie okręty, po " + this.guesses + " próbach"
         );
       }
     }
