@@ -17,13 +17,54 @@
 
 
 
-
     <div class="container-fluid col-12">
-        <aside class="menu">
-            <img class="img-thumbnail col-2" src="images/Country/usaFlag.webp" alt="">
+        <aside class="menu text-center">
+
+            <img class="col-2" id="propaganda" src="images/propaganda/1.jpg" width="300px">
+
+            <img class="col-2" id="propaganda" src="images/propaganda/1.jpg" width="300px">
 
 
-            <ul class="menu-buttons">
+
+            <img class="col-2" class="img-thumbnail col-2" src="images/Country/usaFlag.webp" alt="">
+
+
+
+
+
+            <img class="col-2" id="propaganda" src="images/propaganda/1.jpg" width="300px">
+
+
+
+
+            <img class="col-2" id="propaganda" src="images/propaganda/2.jpg" width="300px">
+            <script>
+
+                const zmianaZdjecia = (index) => {
+                    const propaganda = document.getElementById("propaganda");
+                    propaganda.setAttribute('src', `images/propaganda/${index}.jpg`)
+                };
+
+                let magicznyLicznik = 0;
+                for (let x = 1; x <= 10; x++) {
+                    for (let i = 1; i <= 12; i++) {
+                        magicznyLicznik++;
+                        setTimeout(
+                            () => zmianaZdjecia(i),
+                            magicznyLicznik * 10000
+                        );
+                    }
+                }
+
+
+            </script>
+
+
+
+
+            <ul class="menu-buttons col-12 text-center">
+
+
 
 
                 <li><a href="scores.html" class="p-2 menu-text">Ranking</a></li>
@@ -34,21 +75,132 @@
             </ul>
 
 
+
+
         </aside>
+        <div id="messageArea"></div>
+
+
+        <div class="board">
+
+
+            <div id="board">
+
+
+                <table class="granie">
+
+                    <tr>
+                        <td class="labelLetter">A</td>
+                        <td id="00"></td>
+                        <td id="01"></td>
+                        <td id="02"></td>
+                        <td id="03"></td>
+                        <td id="04"></td>
+                        <td id="05"></td>
+                        <td id="06"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelLetter">B</td>
+                        <td id="10"></td>
+                        <td id="11"></td>
+                        <td id="12"></td>
+                        <td id="13"></td>
+                        <td id="14"></td>
+                        <td id="15"></td>
+                        <td id="16"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelLetter">C</td>
+                        <td id="20"></td>
+                        <td id="21"></td>
+                        <td id="22"></td>
+                        <td id="23"></td>
+                        <td id="24"></td>
+                        <td id="25"></td>
+                        <td id="26"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelLetter">D</td>
+                        <td id="30"></td>
+                        <td id="31"></td>
+                        <td id="32"></td>
+                        <td id="33"></td>
+                        <td id="34"></td>
+                        <td id="35"></td>
+                        <td id="36"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelLetter">E</td>
+                        <td id="40"></td>
+                        <td id="41"></td>
+                        <td id="42"></td>
+                        <td id="43"></td>
+                        <td id="44"></td>
+                        <td id="45"></td>
+                        <td id="46"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelLetter">F</td>
+                        <td id="50"></td>
+                        <td id="51"></td>
+                        <td id="52"></td>
+                        <td id="53"></td>
+                        <td id="54"></td>
+                        <td id="55"></td>
+                        <td id="56"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelLetter">G</td>
+                        <td id="60"></td>
+                        <td id="61"></td>
+                        <td id="62"></td>
+                        <td id="63"></td>
+                        <td id="64"></td>
+                        <td id="65"></td>
+                        <td id="66"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelNumber"></td>
+                        <td class="labelNumber">1</td>
+                        <td class="labelNumber">2</td>
+                        <td class="labelNumber">3</td>
+                        <td class="labelNumber">4</td>
+                        <td class="labelNumber">5</td>
+                        <td class="labelNumber">6</td>
+                        <td class="labelNumber">7</td>
+                    </tr>
+
+                </table>
 
 
 
-        <div class="p-5 text-center board">
-            <img class="img-fluid" src="images/game/board.png" alt="">
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         </div>
 
 
-        A
+
+        <div class="mb-3 mt-5 col-12">
+            <form action="">
+                <input type="text" id="guessInput" placeholder="AO">
+                <input type="button" id="fireButton" value="Ognia!">
+            </form>
+        </div>
 
     </div>
-
 
 
 
@@ -62,8 +214,12 @@
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
         crossorigin="anonymous"></script>
 
-
+    <script src="jsGame/gameBasic.js"></script>
     <script src="js.Bootstrap/bootstrap.min.js"></script>
+
+
+
+
 </body>
 
 </html>
