@@ -15,29 +15,29 @@ var model = {
       var ship = this.ships[i];
       var index = ship.locations.indexOf(guess);
 
-      if (ship.hits[index] === "Strzał") {
+      if (ship.hits[index] === "Trafiłeś !") {
         view.displayMessage("Już tu strzeliłeś!");
         return true;
       } else if (index >= 0) {
-        ship.hits[index] = "Strzał";
+        ship.hits[index] = "Trafiłeś ! ";
         view.displayHit(guess);
-        view.displayMessage("Strzał !");
+        view.displayMessage("Trafiłeś !");
 
         if (this.isSunk(ship)) {
-          view.displayMessage("Zatopiłeś mój okręt!");
+          view.displayMessage("Zatopiłeś okręt przeciwnika!");
           this.shipsSunk++;
         }
         return true;
       }
     }
     view.displayMiss(guess);
-    view.displayMessage("Pudło.");
+    view.displayMessage("Pudło !");
     return false;
   },
 
   isSunk: function (ship) {
     for (var i = 0; i < this.shipLength; i++) {
-      if (ship.hits[i] !== "Trafienie") {
+      if (ship.hits[i] !== "Trafiłeś !") {
         return false;
       }
     }
@@ -52,7 +52,7 @@ var model = {
       } while (this.collision(locations));
       this.ships[i].locations = locations;
     }
-    console.log("Statki :");
+
     console.log(this.ships);
   },
 
@@ -61,9 +61,9 @@ var model = {
     var row, col;
     if (direction === 1) {
       row = Math.floor(Math.random() * this.boardSize);
-      col = Math.floor(Math.random() * (this.boardSize - this.shipLength + 1));
+      col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
     } else {
-      row = Math.floor(Math.random() * (this.boardSize - this.shipLength + 1));
+      row = Math.floor(Math.random() * (this.boardSize - this.shipLength));
       col = Math.floor(Math.random() * this.boardSize);
     }
 
@@ -120,7 +120,7 @@ var controller = {
 
       if (hit && model.shipsSunk === model.numShips) {
         view.displayMessage(
-          "Zatopiłeś wszystkie moje okręty, w " + this.guesses + "próbach"
+          "Zatopiłeś wszystkie okręty, po " + this.guesses + "próbach"
         );
       }
     }
