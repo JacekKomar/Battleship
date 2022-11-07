@@ -17,54 +17,36 @@
 
 
 
+
     <div class="container-fluid col-12">
         <aside class="menu text-center">
 
-            <img class="col-2" id="propaganda" src="images/propaganda/1.jpg" width="300px">
+            <img class="col-3-butEdit p-1" id="image" src="images/propaganda/1.jpg" width="300px">
 
-            <img class="col-2" id="propaganda" src="images/propaganda/1.jpg" width="300px">
-
-
-
-            <img class="col-2" class="img-thumbnail col-2" src="images/Country/usaFlag.webp" alt="">
+            <img class="col-3-butEdit p-1" id="imageTwo" src="images/propaganda/1.jpg" width="300px">
 
 
 
-
-
-            <img class="col-2" id="propaganda" src="images/propaganda/1.jpg" width="300px">
+            <img class="col-2" class="img-thumbnail col-2" src="images/Country/japanFlag.jpeg" alt="">
 
 
 
 
-            <img class="col-2" id="propaganda" src="images/propaganda/2.jpg" width="300px">
-            <script>
 
-                const zmianaZdjecia = (index) => {
-                    const propaganda = document.getElementById("propaganda");
-                    propaganda.setAttribute('src', `images/propaganda/${index}.jpg`)
-                };
+            <img class="col-3-butEdit p-1" id="imageThree" src="images/propaganda/1.jpg" width="300px">
 
-                let magicznyLicznik = 0;
-                for (let x = 1; x <= 10; x++) {
-                    for (let i = 1; i <= 12; i++) {
-                        magicznyLicznik++;
-                        setTimeout(
-                            () => zmianaZdjecia(i),
-                            magicznyLicznik * 10000
-                        );
-                    }
-                }
+
+            <img class="col-3-butEdit p-1" id="imageFour" src="images/propaganda/1.jpg" width="300px">
+
+
+
+            <script src="jsGame/photosChange.js">
 
 
             </script>
 
 
-
-
             <ul class="menu-buttons col-12 text-center">
-
-
 
 
                 <li><a href="scores.html" class="p-2 menu-text">Ranking</a></li>
