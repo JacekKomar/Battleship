@@ -1,6 +1,6 @@
 .menu {
   background-color: bisque;
-  height: 240px;
+  height: 290px;
   width: auto;
 }
 body {
@@ -8,8 +8,6 @@ body {
 }
 
 .menu-buttons {
-  display: flex;
-  flex-direction: row;
   text-decoration: none;
   list-style-type: none;
 }
@@ -17,4 +15,20 @@ body {
 .menu-text {
   color: rgb(0, 0, 0);
   text-decoration: none;
+}
+
+element {
+}
+
+.col-3-butEdit {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 16.666667%;
+  flex: 0 0 16.666667%;
+  max-width: 19.667%;
+}
+
+img {
+  width: 300px;
+  margin: 0 auto;
+  transition: 1s;
 }

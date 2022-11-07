@@ -20,9 +20,9 @@
     <div class="container-fluid col-12">
         <aside class="menu text-center">
 
-            <img class="col-2" id="propaganda" src="images/propaganda/1.jpg" width="300px">
+            <img class="col-3-butEdit p-1" id="image" src="images/propaganda/1.jpg" width="300px">
 
-            <img class="col-2" id="propaganda" src="images/propaganda/1.jpg" width="300px">
+            <img class="col-3-butEdit p-1" id="image" src="images/propaganda/1.jpg" width="300px">
 
 
 
@@ -32,32 +32,42 @@
 
 
 
-            <img class="col-2" id="propaganda" src="images/propaganda/1.jpg" width="300px">
+            <img class="col-3-butEdit p-1" id="image" src="images/propaganda/1.jpg" width="300px">
+
+
+            <img class="col-3-butEdit p-1" id="image" src="images/propaganda/1.jpg" width="300px">
 
 
 
-
-            <img class="col-2" id="propaganda" src="images/propaganda/2.jpg" width="300px">
-            <script>
-
-                const zmianaZdjecia = (index) => {
-                    const propaganda = document.getElementById("propaganda");
-                    propaganda.setAttribute('src', `images/propaganda/${index}.jpg`)
-                };
-
-                let magicznyLicznik = 0;
-                for (let x = 1; x <= 10; x++) {
-                    for (let i = 1; i <= 12; i++) {
-                        magicznyLicznik++;
-                        setTimeout(
-                            () => zmianaZdjecia(i),
-                            magicznyLicznik * 10000
-                        );
-                    }
-                }
-
+            <script type="text/javascript">
+                let image = document.getElementById('image')
+                let images = ['images/propaganda/1.jpg', 'images/propaganda/2.jpg', 'images/propaganda/3.jpg', 'images/propaganda/4.jpg', 'images/propaganda/5.jpg', 'images/propaganda/6.jpg', 'images/propaganda/7.jpg', 'images/propaganda/8.jpg', 'images/propaganda/9.jpg', 'images/propaganda/10.jpg', 'images/propaganda/11.jpg', 'images/propaganda/12.jpg']
+                setInterval(function () {
+                    let random = Math.floor(Math.random() * 12);
+                    image.src = images[random];
+                }, 4000);
 
             </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
