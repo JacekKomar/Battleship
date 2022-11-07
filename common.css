@@ -26,9 +26,3 @@ element {
   flex: 0 0 16.666667%;
   max-width: 19.667%;
 }
-
-img {
-  width: 300px;
-  margin: 0 auto;
-  transition: 1s;
-}
