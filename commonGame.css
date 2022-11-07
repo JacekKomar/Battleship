@@ -72,9 +72,6 @@ form input {
 }
 
 .message {
-  background-color: rgb(190, 126, 48);
-  height: 40px;
-  width: 100px;
   font-size: x-large;
   font-family: Arial, Helvetica, sans-serif;
 }

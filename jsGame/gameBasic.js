@@ -16,7 +16,7 @@ var model = {
       var index = ship.locations.indexOf(guess);
 
       if (ship.hits[index] === "hit") {
-        view.displayMessage("TRAFIONY !");
+        view.displayMessage("Już tu strzeliłeś !");
         return true;
       } else if (index >= 0) {
         ship.hits[index] = "hit";
