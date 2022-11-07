@@ -10,53 +10,69 @@
     <link rel="stylesheet" href="common.css" type="text/css">
     <title>Battleship</title>
     <link rel="icon" href="images/icon.jpg">
+
+    <script>
+        function JapanLink() { location.href = "Japan.html"; }
+
+        function UsaLink() { location.href = "USA.html"; }
+    </script>
+
 </head>
 
 <body>
     <div class="container-fluid col-12">
-        <aside class="menu">
+        <aside class="menuButGameRules text-center">
+
+            <img class="col-3 p-1" id="historicalPhotoOne" src="images/historicalPhotosInGameRules/4.jpg" width="300px">
+
+            <img class="col-2" class="img-thumbnail col-2" src="images/Country/japanFlag.jpg" alt=""
+                onclick="JapanLink()">
+
+            <img class="col-2" class="img-thumbnail col-2" src="images/Country/usaFlag.webp" alt="" onclick="UsaLink()">
+
+            <img class="col-3 p-1" id="historicalPhotoTwo" src="images/historicalPhotosInGameRules/6.jpg" width="300px">
 
 
-
-            <ul class="menu-buttons">
-
-
-                <li><a href="scores.html" class="p-2 menu-text">Ranking</a></li>
-
-                <li><a href="gameRules.html" class="p-2 menu-text">Zasady gry</a></li>
-                <li><a href="index.html" class="p-2 menu-text">Wróć do gry</a></li>
-
-            </ul>
+            <script src="jsGame/historicalPhotosChange.js"></script>
 
 
         </aside>
 
-        <div class="row">
-
-            <div class="text-center col-12">
-                Zasady Gry:
-            </div>
+        <div class="container">
 
 
-            <div class="col-5"><img class="img-thumbnail text-center" src="images/other/gameRules.jpg" alt=""> </div>
+            <div class="row">
 
-            <div class="col-3 text-center">
+                <div class="text-center col-12">
+                    Zasady Gry:
+                </div>
+
+
+                <div class="col-lg-6 col-sm-12"><img class="img-thumbnail imgInGameRules"
+                        src="images/other/gameRules.jpg" alt="">
+                </div>
+
+                <div class="col-lg-6 col-sm-12">
 
 
 
-                Gra w statki nawiązują do zmagań wodnych jakie prowadzone byłe przez Stany Zjednoczone oraz Cesarstwo
-                Japonii podczas II wojny światowej w ramach wojny na pacyfiku. Celem gracza jest zatopienie wszystkich
-                wrogich okrętów przy jak najmniejszej liczbie oddanych strzałów. Grę się prowadzi za pomocą podawania
-                stosownych parametrów w jakich strzał zamierza się oddać wpisując w dolne pole tekstowE. Natomiast górny
-                pasek informuje o trafieniach i pudłach.
+                    Gra w statki nawiązują do zmagań wodnych jakie prowadzone byłe przez Stany Zjednoczone oraz
+                    Cesarstwo
+                    Japonii podczas II wojny światowej w ramach wojny na pacyfiku. Celem gracza jest zatopienie
+                    wszystkich
+                    wrogich okrętów przy jak najmniejszej liczbie oddanych strzałów. Grę się prowadzi za pomocą
+                    podawania
+                    stosownych parametrów w jakich strzał zamierza się oddać wpisując w dolne pole tekstowE. Natomiast
+                    górny
+                    pasek informuje o trafieniach i pudłach.
+
+
+                </div>
 
 
             </div>
 
         </div>
-
-
-
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
             integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
             crossorigin="anonymous"></script>
