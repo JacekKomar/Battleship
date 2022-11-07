@@ -2,7 +2,20 @@
   background-color: rgba(0, 0, 0, 0.925);
 }
 
+.bigFont {
+  font-family: arial;
+  font-size: 70px;
+}
+
+.fontCountry {
+  font-family: arial;
+  font-size: 35px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 .font {
   font-family: arial;
-  font-size: 24px;
 }
