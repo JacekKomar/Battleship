@@ -2,6 +2,8 @@
   background-color: bisque;
   height: 300px;
   width: auto;
+  display: flex;
+  flex-direction: row;
 }
 body {
   background-color: rgb(241, 248, 142);
@@ -29,6 +31,11 @@ body {
   max-width: 19.667%;
 }
 
+.col-md-3-butEdit {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
 .imgInGameRules {
 }
 
@@ -36,6 +43,8 @@ body {
   background-color: bisque;
   height: 500px;
   width: auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .brightened:hover {
