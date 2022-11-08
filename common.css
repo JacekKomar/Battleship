@@ -17,6 +17,11 @@ body {
   text-decoration: none;
 }
 
+.menu-text:hover {
+  text-decoration: none;
+  color: rgb(28, 99, 43);
+}
+
 .col-3-butEdit {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 16.666667%;
@@ -31,4 +36,8 @@ body {
   background-color: bisque;
   height: 500px;
   width: auto;
+}
+
+.brightened:hover {
+  filter: brightness(1.4);
 }
