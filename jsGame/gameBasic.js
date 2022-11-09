@@ -1,3 +1,5 @@
+import { playSound, SOUND_HIT, SOUND_MISS, SOUND_SUNK } from "./audio.js";
+
 var model = {
   boardSize: 7,
   numShips: 3,
@@ -16,12 +18,14 @@ var model = {
       var index = ship.locations.indexOf(guess);
 
       if (ship.hits[index] === "hit") {
+        playSound(SOUND_HIT);
         view.displayMessage("Już tu strzeliłeś !");
         return true;
       } else if (index >= 0) {
         ship.hits[index] = "hit";
         view.displayHit(guess);
         view.displayMessage("Trafiłeś !");
+        playSound(SOUND_SUNK);
 
         if (this.isSunk(ship)) {
           view.displayMessage("Zatopiłeś okręt przeciwnika!");
@@ -32,6 +36,7 @@ var model = {
     }
     view.displayMiss(guess);
     view.displayMessage("Pudło !");
+    playSound(SOUND_MISS);
     return false;
   },
 
@@ -132,13 +137,17 @@ function parseGuess(guess) {
   if (guess === null || guess.length !== 2) {
     alert("Ups, proszę wpisać literę i cyfrę");
   } else {
-    firstChar = guess.charAt(0);
+    let firstChar = guess.charAt(0);
     var row = alphabet.indexOf(firstChar);
     var column = guess.charAt(1);
-
     if (isNaN(row) || isNaN(column)) {
       alert("Ups to nie są współżędne!");
-    } else if (
+      return null;
+    }
+
+    column = parseInt(column) - 1;
+
+    if (
       row < 0 ||
       row >= model.boardSize ||
       column < 0 ||
@@ -146,7 +155,7 @@ function parseGuess(guess) {
     ) {
       alert("Ups, pole poza planszą !");
     } else {
-      return row + column;
+      return `${row}${column}`;
     }
   }
   return null;

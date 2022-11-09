@@ -57,6 +57,8 @@
 
             <ul class="menu-buttons  ">
 
+                <div class="dropdown"> </div>
+                <button class="dropdown-toggle">Rozwiń </button>
 
                 <li><a href="scores.html" class="p-2 menu-text">Ranking</a></li>
 
@@ -155,13 +157,13 @@
                     </tr>
                     <tr>
                         <td class="labelNumber"></td>
-                        <td class="labelNumber">0</td>
                         <td class="labelNumber">1</td>
                         <td class="labelNumber">2</td>
                         <td class="labelNumber">3</td>
                         <td class="labelNumber">4</td>
                         <td class="labelNumber">5</td>
                         <td class="labelNumber">6</td>
+                        <td class="labelNumber">7</td>
                     </tr>
 
                 </table>
@@ -190,6 +192,11 @@
         <div class="mb-3 mt-5 col-12">
 
             <form action="">
+
+                <div id="shipShow" class="shipsShow">
+
+                </div>
+
                 <div class="message" id="messageArea"></div>
 
                 <input type="text" id="guessInput" placeholder="AO">
@@ -211,7 +218,7 @@
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
         crossorigin="anonymous"></script>
 
-    <script src="jsGame/gameBasic.js"></script>
+    <script type="module" src="jsGame/gameBasic.js"></script>
     <script src="js.Bootstrap/bootstrap.min.js"></script>
 
 
