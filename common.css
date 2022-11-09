@@ -50,3 +50,7 @@ body {
 .brightened:hover {
   filter: brightness(1.4);
 }
+
+.menuButtonColor {
+  background-color: blanchedalmond;
+}
