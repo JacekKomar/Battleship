@@ -168,6 +168,13 @@ function handleFireButton() {
   guessInput.value = "";
 }
 
+function handleFireClick(coords) {
+  var guess = coords.toUpperCase();
+  controller.processGuess(guess);
+}
+
+window.handleFireClick = handleFireClick;
+
 function handleKeyPress(e) {
   var fireButton = document.getElementById("fireButton");
 
