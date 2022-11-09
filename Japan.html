@@ -20,64 +20,51 @@
 
 <body>
 
+    <header>
+
+        <nav class="navbar">
 
 
-    <div class="container-fluid col-12">
-        <aside class="menu text-center ">
+            <div class=" container-fluid ">
+                <aside class="menu col-12">
 
 
-            <img class=" img-fluid col-md-2 d-none d-xl-block p-1" id="image" src="images/propaganda/2.jpg"
-                width="300px">
+                    <img class=" img-fluid col-xl-2  d-none d-xl-block p-1" id="image" src="images/propaganda/2.jpg"
+                        width="300px">
 
-            <img class="img-fluid col-md-2 d-none d-sm-block p-1" id="imageTwo" src="images/propaganda/1.jpg"
-                width="300px">
+                    <img class="img-fluid col-xl-2 col-md-4 d-none d-md-block p-1" id="imageTwo"
+                        src="images/propaganda/1.jpg" width="300px">
 
+                    <img class="img-thumbnail col-xl-4 brightened" src="images/Country/japanFlag.jpg" alt=""
+                        onclick="JapanLink()">
 
+                    <img class="img-fluid col-xl-2 col-lg-4 d-none d-md-block p-1" id="imageThree"
+                        src="images/propaganda/13.jpg" width="300px">
 
-            <img class="img-thumbnail col-3 brightened" src="images/Country/japanFlag.jpg" alt="" onclick="JapanLink()">
+                    <img class="img-fluid col-xl-2  d-none d-xl-block p-1" id="imageFour" src="images/propaganda/3.jpg"
+                        width="300px">
 
-
-
-
-
-            <img class="img-fluid col-md-2 d-none d-sm-block p-1" id="imageThree" src="images/propaganda/13.jpg"
-                width="300px">
-
-
-            <img class="img-fluid col-md-2 d-none d-xl-block p-1" id="imageFour" src="images/propaganda/3.jpg"
-                width="300px">
-
+        </nav>
+        </aside>
+    </header>
+    <script src="jsGame/photosChange.js">
 
 
-            <script src="jsGame/photosChange.js">
-
-
-            </script>
-
-            <header>
-                <n>
-
-
-                    </nav>
-
-
-            </header>
+    </script>
 
 
 
-
-
-            <div class="dropdown">
-                <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Rozwiń
-                </button>
-                <ul class="dropdown-menu menuButtonColor">
-                    <li><a class="dropdown-item menu-text" href="scores.html">Ranking</a></li>
-                    <li><a class="dropdown-item menu-text" href="gameRules.html">Zasady gry</a></li>
-                    <li><a class="dropdown-item menu-text" href="index.html">Wróć do gry</a></li>
-                </ul>
-            </div>
+    <div class="dropdown text-center">
+        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Rozwiń Menu:
+        </button>
+        <ul class="dropdown-menu menuButtonColor">
+            <li><a class="dropdown-item menu-text" href="scores.html">Ranking</a></li>
+            <li><a class="dropdown-item menu-text" href="gameRules.html">Zasady gry</a></li>
+            <li><a class="dropdown-item menu-text" href="index.html">Menu główne</a></li>
+            <li><a class="dropdown-item menu-text" href="USA.html">Zmień na USA</a></li>
+        </ul>
+    </div>
 
 
 
@@ -92,14 +79,14 @@
 
 
 
-    </aside>
 
 
 
 
 
 
-    <div class="board mt-4">
+
+    <div class="board mt-5">
 
 
         <div id="board">
