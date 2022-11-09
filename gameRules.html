@@ -19,32 +19,70 @@
 </head>
 
 <body>
+
+
+
     <div class="container-fluid col-12">
-        <aside class="menuButGameRules">
-
-            <img class="col-3 d-none d-md-block p-1" id="historicalPhotoOne"
-                src="images/historicalPhotosInGameRules/4.jpg" width="300px">
-
-            <img class="brightened col-3 img-fluid  p-1" src="images/Country/japanFlag.jpg" alt=""
-                onclick="JapanLink()">
-
-            <img class="brightened col-3 img-fluid   p-1" src="images/Country/usaFlag.webp" alt="" onclick="UsaLink()">
-
-            <img class="col-3 d-none d-md-block p-1" id="historicalPhotoTwo"
-                src="images/historicalPhotosInGameRules/6.jpg" width="300px">
+        <header>
+            <nav class="navbar">
 
 
-            <script src="jsGame/historicalPhotosChange.js"></script>
+                <aside class="menuButGameRules">
+
+                    <img class="col-xl-4 col-lg-6 d-none d-lg-block p-1" id="historicalPhotoOne"
+                        src="images/historicalPhotosInGameRules/4.jpg" width="300px">
 
 
-        </aside>
+
+                    <img class="col-xl-4 col-lg-6 p-1" id="historicalPhotoTwo"
+                        src="images/historicalPhotosInGameRules/6.jpg" width="300px">
+
+                    <img class="col-xl-4  d-none d-md-block p-1" id="historicalPhotoThree"
+                        src="images/historicalPhotosInGameRules/7.jpg" width="300px">
+
+
+
+
+                    <script src="jsGame/historicalPhotosChange.js"></script>
+
+            </nav>
+            </aside>
+        </header>
+
+
+        <div class="dropdown text-center">
+            <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Rozwiń Menu:
+            </button>
+
+
+
+            <ul class="dropdown-menu menuButtonColor">
+                <li><a class="dropdown-item menu-text" href="scores.html">Ranking</a></li>
+                <li><a class="dropdown-item menu-text" href="gameRules.html">Zasady gry</a></li>
+                <li><a class="dropdown-item menu-text" href="index.html">Menu główne</a></li>
+                <li><a class="dropdown-item menu-text" href="USA.html">Zagraj USA</a></li>
+                <li><a class="dropdown-item menu-text" href="Japan.html">Zagraj Japonią</a></li>
+            </ul>
+        </div>
+
+
+
+
+
+
 
         <div class="container">
 
-
             <div class="row">
 
-                <div class="text-center col-12">
+
+
+
+
+
+                <div class="text-center col-12 mt-4">
                     Zasady Gry:
                 </div>
 
@@ -63,7 +101,8 @@
                     wszystkich
                     wrogich okrętów przy jak najmniejszej liczbie oddanych strzałów. Grę się prowadzi za pomocą
                     podawania
-                    stosownych parametrów w jakich strzał zamierza się oddać wpisując w dolne pole tekstowE. Natomiast
+                    stosownych parametrów w jakich strzał zamierza się oddać wpisując w dolne pole tekstowe lub klikając
+                    na konkretne pola na planszy gry. Natomiast
                     górny
                     pasek informuje o trafieniach i pudłach.
 

@@ -14,24 +14,71 @@
 
 <body>
     <div class="container-fluid col-12">
-        <aside class="menu">
+
+        <header>
+            <aside class="menu">
+
+                <nav class="navbar">
+                    <img class="col-xl-3 d-none d-md-block p-1" id="historicalPhotoOne"
+                        src="images/historicalPhotosInGameRules/4.jpg" width="300px">
+
+                    <img class="brightened col-xl-3 img-fluid  p-1" src="images/Country/japanFlag.jpg" alt=""
+                        onclick="JapanLink()">
+
+                    <img class="brightened col-xl-3 img-fluid   p-1" src="images/Country/usaFlag.webp" alt=""
+                        onclick="UsaLink()">
+
+                    <img class="col-xl-3 d-none d-md-block p-1" id="historicalPhotoTwo"
+                        src="images/historicalPhotosInGameRules/6.jpg" width="300px">
+
+
+                    <script src="jsGame/historicalPhotosChange.js"></script>
 
 
 
-            <ul class="menu-buttons">
 
 
-                <li><a href="scores.html" class="p-2 menu-text">Ranking</a></li>
 
-                <li><a href="gameRules.html" class="p-2 menu-text">Zasady gry</a></li>
-                <li><a href="index.html" class="p-2 menu-text">Wróć do gry</a></li>
+                </nav>
 
+
+
+
+
+
+
+            </aside>
+        </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="dropdown text-center">
+            <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Rozwiń Menu:
+            </button>
+
+
+
+            <ul class="dropdown-menu menuButtonColor">
+                <li><a class="dropdown-item menu-text" href="scores.html">Ranking</a></li>
+                <li><a class="dropdown-item menu-text" href="gameRules.html">Zasady gry</a></li>
+                <li><a class="dropdown-item menu-text" href="index.html">Menu główne</a></li>
+                <li><a class="dropdown-item menu-text" href="USA.html">Zagraj USA</a></li>
+                <li><a class="dropdown-item menu-text" href="Japan.html">Zagraj Japonią</a></li>
             </ul>
-
-
-        </aside>
-
-
+        </div>
 
 
 
