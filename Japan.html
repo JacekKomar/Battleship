@@ -75,10 +75,14 @@
     </div>
 
 
+    <div class="point col-12">
 
 
+        <h1>Zdobyte punkty: </h1>
+        <h1 id="incrementText">50</h1>
 
 
+    </div>
 
 
 
@@ -96,7 +100,8 @@
 
                 <tr>
                     <td class="labelLetter">A</td>
-                    <td id="00" class="brightened-field" onclick="handleFireClick('A1')"></td>
+                    <td id="00" class="brightened-field" onclick="incrementButton()" onclick="handleFireClick('A1')">
+                    </td>
                     <td id="01" class="brightened-field" onclick="handleFireClick('A2')"></td>
                     <td id="02" class="brightened-field" onclick="handleFireClick('A3')"></td>
                     <td id="03" class="brightened-field" onclick="handleFireClick('A4')"></td>
@@ -228,8 +233,9 @@
         crossorigin="anonymous"></script>
 
     <script type="module" src="jsGame/gameBasic.js"></script>
-    <script src="js.Bootstrap/bootstrap.min.js"></script>
+    <script src="jsGame/scoreOfShips.js"></script>
 
+    <script src="js.Bootstrap/bootstrap.min.js"></script>
 
 
 

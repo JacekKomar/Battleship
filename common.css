@@ -58,3 +58,8 @@ body {
 .colorOfFlags {
   background-color: rgb(0, 0, 0);
 }
+
+.point {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,4 +1,4 @@
-const shipList = [
+export const shipList = [
   {
     id: "Lotniskowiec",
     img: "images/ships/lotniskowiec.jpg",

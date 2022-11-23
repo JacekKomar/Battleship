@@ -171,6 +171,13 @@ function handleFireButton() {
 function handleFireClick(coords) {
   var guess = coords.toUpperCase();
   controller.processGuess(guess);
+
+  var element = document.getElementById("incrementText");
+  var value = element.innerHTML;
+
+  --value;
+  console.log(value);
+  document.getElementById("incrementText").innerHTML = value;
 }
 
 window.handleFireClick = handleFireClick;
