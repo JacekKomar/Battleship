@@ -3,7 +3,6 @@
   width: 1024px;
   height: 863px;
   margin: auto;
-  /* background: url("/images/game/board.png") no-repeat; */
 }
 
 .messageArea {
@@ -51,7 +50,6 @@ td {
 }
 
 form {
-  position: absolute;
   bottom: 0px;
   right: 0px;
   padding: 15px;
@@ -64,11 +62,9 @@ form input {
 }
 .hit {
   background: url("images/game/ship.png") no-repeat center center;
-  /* position: absolute; */
 }
 .miss {
   background: url("images/game/miss.png") no-repeat center center;
-  /* position: absolute; */
 }
 
 .message {

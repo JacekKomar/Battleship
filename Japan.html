@@ -24,10 +24,8 @@
 
         <nav class="navbar">
 
-
             <div class=" container-fluid ">
                 <aside class="menu col-12">
-
 
                     <img class=" img-fluid col-xl-2  d-none d-xl-block p-1" id="image" src="images/propaganda/2.jpg"
                         width="300px">
@@ -47,12 +45,7 @@
         </nav>
         </aside>
     </header>
-    <script src="jsGame/photosChange.js">
-
-
-    </script>
-
-
+    <script src="jsGame/photosChange.js"></script>
 
     <div class="dropdown text-center">
         <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -66,33 +59,37 @@
         </ul>
     </div>
 
-
-
-
     </div>
 
-
     </div>
-
-
 
     <div class="point mt-5">
 
+        <form action="">
 
-        <h1>Zdobyte punkty: </h1>
-        <h1 id="incrementText">50</h1>
+            <div class="pktInfo">
 
+                <h1>Zdobyte punkty: <h1 id="incrementText">50</h1>
+                </h1>
+            </div>
+
+            <div id="shipShow" class="shipsShow">
+
+            </div>
+
+            <div class="message" id="messageArea"></div>
+
+            <input type="text" id="guessInput" placeholder="AO">
+            <input type="button" id="fireButton" value="Ognia!">
+        </form>
 
     </div>
 
     <div class="board mt-5">
 
-
         <div id="board">
 
-
             <table class="granie">
-
                 <tr>
                     <td class="labelLetter">A</td>
                     <td id="00" class="brightened-field" onclick="handleFireClick('A1')">
@@ -177,48 +174,12 @@
 
             </table>
 
-
-
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
 
-
-    <div class="mb-3 mt-5 col-12">
-
-        <form action="">
-
-            <div id="shipShow" class="shipsShow">
-
-            </div>
-
-            <div class="message" id="messageArea"></div>
-
-            <input type="text" id="guessInput" placeholder="AO">
-            <input type="button" id="fireButton" value="Ognia!">
-        </form>
     </div>
-
-    </div>
-
-
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -228,11 +189,7 @@
         crossorigin="anonymous"></script>
 
     <script type="module" src="jsGame/gameBasic.js"></script>
-
-
     <script src="js.Bootstrap/bootstrap.min.js"></script>
-
-
 
 </body>
 

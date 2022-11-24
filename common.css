@@ -36,9 +36,6 @@ body {
   width: 25%;
 }
 
-.imgInGameRules {
-}
-
 .menuButGameRules {
   background-color: bisque;
   height: 500px;
@@ -60,6 +57,12 @@ body {
 }
 
 .point {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pktInfo {
   display: flex;
   flex-direction: row;
   justify-content: center;
