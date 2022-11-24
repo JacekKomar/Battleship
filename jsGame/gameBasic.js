@@ -30,9 +30,9 @@ var model = {
         return true;
       } else if (index >= 0) {
         ship.hits[index] = "hit";
+        playSound("sounds/hit.mp3");
         view.displayHit(guess);
         view.displayMessage("Trafiłeś !");
-        playSound("sounds/destroyOfShip.mp3");
 
         if (this.isSunk(ship)) {
           view.displayMessage("Zatopiłeś okręt przeciwnika!");
