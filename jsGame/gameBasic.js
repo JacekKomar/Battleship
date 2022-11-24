@@ -25,14 +25,14 @@ var model = {
       var index = ship.locations.indexOf(guess);
 
       if (ship.hits[index] === "hit") {
-        playSound(SOUND_HIT);
+        playSound("sounds/shot.mp3");
         view.displayMessage("Już tu strzeliłeś !");
         return true;
       } else if (index >= 0) {
         ship.hits[index] = "hit";
         view.displayHit(guess);
         view.displayMessage("Trafiłeś !");
-        playSound(SOUND_SUNK);
+        playSound("sounds/destroyOfShip.mp3");
 
         if (this.isSunk(ship)) {
           view.displayMessage("Zatopiłeś okręt przeciwnika!");
@@ -43,7 +43,7 @@ var model = {
     }
     view.displayMiss(guess);
     view.displayMessage("Pudło !");
-    playSound(SOUND_MISS);
+    playSound("sounds/Miss.mp3");
     return false;
   },
 
