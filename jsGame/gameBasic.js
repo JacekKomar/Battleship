@@ -13,6 +13,13 @@ var model = {
   ],
 
   fire: function (guess) {
+    var element = document.getElementById("incrementText");
+    var value = element.innerHTML;
+
+    --value;
+    console.log(value);
+    document.getElementById("incrementText").innerHTML = value;
+
     for (var i = 0; i < this.numShips; i++) {
       var ship = this.ships[i];
       var index = ship.locations.indexOf(guess);
