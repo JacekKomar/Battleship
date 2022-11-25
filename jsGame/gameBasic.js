@@ -17,6 +17,12 @@ var model = {
     var value = element.innerHTML;
 
     --value;
+    if (value <= 0)
+      alert(
+        "Przegrałeś grę, straciłeś wszystkie możliwe strzały. Zacznij grę jeszcze raz !"
+      );
+    if (value <= 0) location.href = "index.html";
+
     console.log(value);
     document.getElementById("incrementText").innerHTML = value;
 
