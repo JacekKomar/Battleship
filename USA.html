@@ -63,7 +63,7 @@
     </div>
     </div>
     </div>
-    <div id="showObject"></div>
+
     <div class="point mt-5">
 
         <form class="rounded border border-dark" action="">
@@ -85,101 +85,108 @@
         </form>
 
     </div>
+    <div class="changeLocation">
 
-    <div class="board mt-5">
+        <div class="board mt-5">
 
-        <div id="board">
+            <div id="board">
 
-            <table class="granie">
+                <table class="granie">
 
-                <tr>
-                    <td class="labelLetter">A</td>
-                    <td id="00" class="brightened-field" onclick="handleFireClick('A1')"></td>
-                    <td id="01" class="brightened-field" onclick="handleFireClick('A2')"></td>
-                    <td id="02" class="brightened-field" onclick="handleFireClick('A3')"></td>
-                    <td id="03" class="brightened-field" onclick="handleFireClick('A4')"></td>
-                    <td id="04" class="brightened-field" onclick="handleFireClick('A5')"></td>
-                    <td id="05" class="brightened-field" onclick="handleFireClick('A6')"></td>
-                    <td id="06" class="brightened-field" onclick="handleFireClick('A7')"></td>
-                </tr>
-                <tr>
-                    <td class="labelLetter">B</td>
-                    <td id="10" class="brightened-field" onclick="handleFireClick('B1')"></td>
-                    <td id="11" class="brightened-field" onclick="handleFireClick('B2')"></td>
-                    <td id="12" class="brightened-field" onclick="handleFireClick('B3')"></td>
-                    <td id="13" class="brightened-field" onclick="handleFireClick('B4')"></td>
-                    <td id="14" class="brightened-field" onclick="handleFireClick('B5')"></td>
-                    <td id="15" class="brightened-field" onclick="handleFireClick('B6')"></td>
-                    <td id="16" class="brightened-field" onclick="handleFireClick('B7')"></td>
-                </tr>
-                <tr>
-                    <td class="labelLetter">C</td>
-                    <td id="20" class="brightened-field" onclick="handleFireClick('C1')"></td>
-                    <td id="21" class="brightened-field" onclick="handleFireClick('C2')"></td>
-                    <td id="22" class="brightened-field" onclick="handleFireClick('C3')"></td>
-                    <td id="23" class="brightened-field" onclick="handleFireClick('C4')"></td>
-                    <td id="24" class="brightened-field" onclick="handleFireClick('C5')"></td>
-                    <td id="25" class="brightened-field" onclick="handleFireClick('C6')"></td>
-                    <td id="26" class="brightened-field" onclick="handleFireClick('C7')"></td>
-                </tr>
-                <tr>
-                    <td class="labelLetter">D</td>
-                    <td id="30" class="brightened-field" onclick="handleFireClick('D1')"></td>
-                    <td id="31" class="brightened-field" onclick="handleFireClick('D2')"></td>
-                    <td id="32" class="brightened-field" onclick="handleFireClick('D3')"></td>
-                    <td id="33" class="brightened-field" onclick="handleFireClick('D4')"></td>
-                    <td id="34" class="brightened-field" onclick="handleFireClick('D5')"></td>
-                    <td id="35" class="brightened-field" onclick="handleFireClick('D6')"></td>
-                    <td id="36" class="brightened-field" onclick="handleFireClick('D7')"></td>
-                </tr>
-                <tr>
-                    <td class="labelLetter">E</td>
-                    <td id="40" class="brightened-field" onclick="handleFireClick('E1')"></td>
-                    <td id="41" class="brightened-field" onclick="handleFireClick('E2')"></td>
-                    <td id="42" class="brightened-field" onclick="handleFireClick('E3')"></td>
-                    <td id="43" class="brightened-field" onclick="handleFireClick('E4')"></td>
-                    <td id="44" class="brightened-field" onclick="handleFireClick('E5')"></td>
-                    <td id="45" class="brightened-field" onclick="handleFireClick('E6')"></td>
-                    <td id="46" class="brightened-field" onclick="handleFireClick('E7')"></td>
-                </tr>
-                <tr>
-                    <td class="labelLetter">F</td>
-                    <td id="50" class="brightened-field" onclick="handleFireClick('F1')"></td>
-                    <td id="51" class="brightened-field" onclick="handleFireClick('F2')"></td>
-                    <td id="52" class="brightened-field" onclick="handleFireClick('F3')"></td>
-                    <td id="53" class="brightened-field" onclick="handleFireClick('F4')"></td>
-                    <td id="54" class="brightened-field" onclick="handleFireClick('F5')"></td>
-                    <td id="55" class="brightened-field" onclick="handleFireClick('F6')"></td>
-                    <td id="56" class="brightened-field" onclick="handleFireClick('F7')"></td>
-                </tr>
-                <tr>
-                    <td class="labelLetter">G</td>
-                    <td id="60" class="brightened-field" onclick="handleFireClick('G1')"></td>
-                    <td id="61" class="brightened-field" onclick="handleFireClick('G2')"></td>
-                    <td id="62" class="brightened-field" onclick="handleFireClick('G3')"></td>
-                    <td id="63" class="brightened-field" onclick="handleFireClick('G4')"></td>
-                    <td id="64" class="brightened-field" onclick="handleFireClick('G5')"></td>
-                    <td id="65" class="brightened-field" onclick="handleFireClick('G6')"></td>
-                    <td id="66" class="brightened-field" onclick="handleFireClick('G7')"></td>
-                </tr>
-                <tr>
-                    <td class="labelNumber"></td>
-                    <td class="labelNumber">1</td>
-                    <td class="labelNumber">2</td>
-                    <td class="labelNumber">3</td>
-                    <td class="labelNumber">4</td>
-                    <td class="labelNumber">5</td>
-                    <td class="labelNumber">6</td>
-                    <td class="labelNumber">7</td>
-                </tr>
+                    <tr>
+                        <td class="labelLetter">A</td>
+                        <td id="00" class="brightened-field" onclick="handleFireClick('A1')"></td>
+                        <td id="01" class="brightened-field" onclick="handleFireClick('A2')"></td>
+                        <td id="02" class="brightened-field" onclick="handleFireClick('A3')"></td>
+                        <td id="03" class="brightened-field" onclick="handleFireClick('A4')"></td>
+                        <td id="04" class="brightened-field" onclick="handleFireClick('A5')"></td>
+                        <td id="05" class="brightened-field" onclick="handleFireClick('A6')"></td>
+                        <td id="06" class="brightened-field" onclick="handleFireClick('A7')"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelLetter">B</td>
+                        <td id="10" class="brightened-field" onclick="handleFireClick('B1')"></td>
+                        <td id="11" class="brightened-field" onclick="handleFireClick('B2')"></td>
+                        <td id="12" class="brightened-field" onclick="handleFireClick('B3')"></td>
+                        <td id="13" class="brightened-field" onclick="handleFireClick('B4')"></td>
+                        <td id="14" class="brightened-field" onclick="handleFireClick('B5')"></td>
+                        <td id="15" class="brightened-field" onclick="handleFireClick('B6')"></td>
+                        <td id="16" class="brightened-field" onclick="handleFireClick('B7')"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelLetter">C</td>
+                        <td id="20" class="brightened-field" onclick="handleFireClick('C1')"></td>
+                        <td id="21" class="brightened-field" onclick="handleFireClick('C2')"></td>
+                        <td id="22" class="brightened-field" onclick="handleFireClick('C3')"></td>
+                        <td id="23" class="brightened-field" onclick="handleFireClick('C4')"></td>
+                        <td id="24" class="brightened-field" onclick="handleFireClick('C5')"></td>
+                        <td id="25" class="brightened-field" onclick="handleFireClick('C6')"></td>
+                        <td id="26" class="brightened-field" onclick="handleFireClick('C7')"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelLetter">D</td>
+                        <td id="30" class="brightened-field" onclick="handleFireClick('D1')"></td>
+                        <td id="31" class="brightened-field" onclick="handleFireClick('D2')"></td>
+                        <td id="32" class="brightened-field" onclick="handleFireClick('D3')"></td>
+                        <td id="33" class="brightened-field" onclick="handleFireClick('D4')"></td>
+                        <td id="34" class="brightened-field" onclick="handleFireClick('D5')"></td>
+                        <td id="35" class="brightened-field" onclick="handleFireClick('D6')"></td>
+                        <td id="36" class="brightened-field" onclick="handleFireClick('D7')"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelLetter">E</td>
+                        <td id="40" class="brightened-field" onclick="handleFireClick('E1')"></td>
+                        <td id="41" class="brightened-field" onclick="handleFireClick('E2')"></td>
+                        <td id="42" class="brightened-field" onclick="handleFireClick('E3')"></td>
+                        <td id="43" class="brightened-field" onclick="handleFireClick('E4')"></td>
+                        <td id="44" class="brightened-field" onclick="handleFireClick('E5')"></td>
+                        <td id="45" class="brightened-field" onclick="handleFireClick('E6')"></td>
+                        <td id="46" class="brightened-field" onclick="handleFireClick('E7')"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelLetter">F</td>
+                        <td id="50" class="brightened-field" onclick="handleFireClick('F1')"></td>
+                        <td id="51" class="brightened-field" onclick="handleFireClick('F2')"></td>
+                        <td id="52" class="brightened-field" onclick="handleFireClick('F3')"></td>
+                        <td id="53" class="brightened-field" onclick="handleFireClick('F4')"></td>
+                        <td id="54" class="brightened-field" onclick="handleFireClick('F5')"></td>
+                        <td id="55" class="brightened-field" onclick="handleFireClick('F6')"></td>
+                        <td id="56" class="brightened-field" onclick="handleFireClick('F7')"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelLetter">G</td>
+                        <td id="60" class="brightened-field" onclick="handleFireClick('G1')"></td>
+                        <td id="61" class="brightened-field" onclick="handleFireClick('G2')"></td>
+                        <td id="62" class="brightened-field" onclick="handleFireClick('G3')"></td>
+                        <td id="63" class="brightened-field" onclick="handleFireClick('G4')"></td>
+                        <td id="64" class="brightened-field" onclick="handleFireClick('G5')"></td>
+                        <td id="65" class="brightened-field" onclick="handleFireClick('G6')"></td>
+                        <td id="66" class="brightened-field" onclick="handleFireClick('G7')"></td>
+                    </tr>
+                    <tr>
+                        <td class="labelNumber"></td>
+                        <td class="labelNumber">1</td>
+                        <td class="labelNumber">2</td>
+                        <td class="labelNumber">3</td>
+                        <td class="labelNumber">4</td>
+                        <td class="labelNumber">5</td>
+                        <td class="labelNumber">6</td>
+                        <td class="labelNumber">7</td>
+                    </tr>
 
-            </table>
+
+                </table>
+
+            </div>
 
         </div>
-
+        <div class="showObjectDisplay ">
+            <div class="showObject p-1" id="showObject"></div>
+            <div class="showObject p-1" id="showObjectTwo"></div>
+            <div class="showObject p-1" id="showObjectThree"></div>
+            <div class="showObject p-1" id="showObjectFour"></div>
+        </div>
     </div>
-
-
 
     </div>
 

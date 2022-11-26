@@ -67,3 +67,33 @@ body {
   flex-direction: row;
   justify-content: center;
 }
+
+.allInfoAboutShip {
+  width: 313px;
+  background-color: rgb(236, 215, 176);
+  justify-content: center;
+  text-align: center;
+  border: 2px solid green;
+  border-radius: 5px 10px 5px 10px;
+  margin-bottom: 20px;
+  margin: auto;
+}
+
+.imageOfShip {
+  width: 300px;
+  height: 200px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.changeLocation {
+  display: flex;
+  flex-direction: row;
+}
+
+.showObjectDisplay {
+  display: flex;
+  flex-direction: column-reverse;
+}

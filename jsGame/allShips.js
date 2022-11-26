@@ -1,4 +1,11 @@
-export const shipList = [
+export const shipList = {
+  id: "Lotniskowiec",
+  img: "images/ships/lotniskowiec.jpg",
+  title: "Lotniskowiec",
+  desc: "klasa okrętów, której głównym zadaniem jest prowadzenie operacji bojowych za pomocą bazujących na nich samolotów i przystosowana do tego celu konstrukcyjnie (pokład startowy).Pierwsze okręty tej klasy powstały pod koniec I wojny światowej, następnie odegrały dużą rolę w walkach II wojny światowej, szczególnie na Pacyfiku.",
+};
+
+/* export const shipList = [
   {
     id: "Lotniskowiec",
     img: "images/ships/lotniskowiec.jpg",
@@ -27,3 +34,5 @@ export const shipList = [
     desc: "klasa dużych, silnie opancerzonych i uzbrojonych pełnomorskich okrętów artyleryjskich, stanowiących trzon największych flot wojennych od czasu powstania klasy pancerników w drugiej połowie XIX wieku do okresu II wojny światowej. ",
   },
 ];
+
+*/
