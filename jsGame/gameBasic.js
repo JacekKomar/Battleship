@@ -68,11 +68,13 @@ var model = {
         if (this.isSunk(ship)) {
           view.displayMessage("Zatopiłeś okręt przeciwnika!");
           this.shipsSunk++;
+
           shipInfo.displayMessage();
           shipInfoTwo.displayMessage();
           shipInfoThree.displayMessage();
           shipInfoFour.displayMessage();
         }
+
         return true;
       }
     }
