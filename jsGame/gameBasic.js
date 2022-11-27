@@ -1,4 +1,6 @@
-export const shipListOne = {
+import { playSound, SOUND_HIT, SOUND_MISS, SOUND_SUNK } from "./audio.js";
+
+const shipListOne = {
   id: "Lotniskowiec",
   img: "images/ships/lotniskowiec.jpg",
   title: "Lotniskowiec",
@@ -22,8 +24,6 @@ const shipListFour = {
   img: "images/ships/pancernik.jpg",
   desc: "klasa dużych, silnie opancerzonych i uzbrojonych pełnomorskich okrętów artyleryjskich, stanowiących trzon największych flot wojennych od czasu powstania klasy pancerników w drugiej połowie XIX wieku do okresu II wojny światowej. ",
 };
-
-import { playSound, SOUND_HIT, SOUND_MISS, SOUND_SUNK } from "./audio.js";
 
 var model = {
   boardSize: 7,
