@@ -48,7 +48,6 @@ var model = {
       );
     if (value <= 0) location.href = "index.html";
 
-    console.log(value);
     document.getElementById("incrementText").innerHTML = value;
 
     for (var i = 0; i < this.numShips; i++) {
@@ -253,7 +252,6 @@ function handleFireClick(coords) {
   var element = document.getElementById("incrementText");
   var value = element.innerHTML;
 
-  console.log(value);
   document.getElementById("incrementText").innerHTML = value;
 }
 

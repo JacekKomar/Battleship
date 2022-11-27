@@ -1,7 +1,6 @@
 let tableRanking = document.querySelector("#tableRanking");
 let name = prompt("Wpisz swój nick");
 let scoreInRanking = (tableRanking.innerHTML = `
-
 <table class="table table-dark">
   <thead>
     <tr>
@@ -31,7 +30,6 @@ let scoreInRanking = (tableRanking.innerHTML = `
       <td>Chester Nimitz</td>
       <td>21</td>
     </tr>
-
     <tr>
       <th scope="row">4</th>
       <td>Czang Kaj-szek</td>
