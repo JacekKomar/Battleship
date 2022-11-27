@@ -202,6 +202,7 @@ var controller = {
         view.displayMessage(
           "Zatopiłeś wszystkie okręty, po " + this.guesses + " próbach"
         );
+
         alert("Gratulacje wygrałeś !");
       }
     }

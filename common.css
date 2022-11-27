@@ -91,9 +91,11 @@ body {
 .changeLocation {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .showObjectDisplay {
   display: flex;
   flex-direction: column-reverse;
+  justify-content: right;
 }
