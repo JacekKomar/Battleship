@@ -68,10 +68,15 @@ var model = {
           view.displayMessage("Zatopiłeś okręt przeciwnika!");
           this.shipsSunk++;
 
-          shipInfo.displayMessage();
-          shipInfoTwo.displayMessage();
-          shipInfoThree.displayMessage();
-          shipInfoFour.displayMessage();
+          let random = Math.floor(Math.random() * 4);
+          console.log("wylosowany krążwonik nr: ", random);
+          const elementy = [shipInfo, shipInfoTwo, shipInfoThree, shipInfoFour];
+          elementy[random].displayMessage();
+
+          // shipInfo.displayMessage();
+          // shipInfoTwo.displayMessage();
+          // shipInfoThree.displayMessage();
+          // shipInfoFour.displayMessage();
         }
 
         return true;

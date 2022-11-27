@@ -1,5 +1,10 @@
 let tableRanking = document.querySelector("#tableRanking");
 let name = prompt("Wpisz swój nick");
+let name2 = name;
+
+let imiona = localStorage.getItem("imiona") || [];
+localStorage.setItem("imiona", [...imiona, name2]);
+
 let scoreInRanking = (tableRanking.innerHTML = `
 <table class="table table-dark">
   <thead>
