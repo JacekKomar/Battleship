@@ -1,4 +1,5 @@
 import { playSound, SOUND_HIT, SOUND_MISS, SOUND_SUNK } from "./audio.js";
+import { addUserListToLocalStorage } from "./localStorageHelpers.js";
 
 const shipListOne = {
   id: "Lotniskowiec",
@@ -30,12 +31,29 @@ var model = {
   numShips: 3,
   shipLength: 3,
   shipsSunk: 0,
+  randomShipDescriptionList: [],
 
   ships: [
     { locations: [0, 0, 0], hits: ["", "", ""] },
     { locations: [0, 0, 0], hits: ["", "", ""] },
     { locations: [0, 0, 0], hits: ["", "", ""] },
   ],
+
+  randomizeShipDescription() {
+    let random = Math.floor(Math.random() * 4);
+
+    if (this.randomShipDescriptionList.length === 4) {
+      return 0;
+    }
+
+    if (this.randomShipDescriptionList.includes(random) === true) {
+      return this.randomizeShipDescription();
+    } else {
+      this.randomShipDescriptionList.push(random);
+
+      return random;
+    }
+  },
 
   fire: function (guess) {
     var element = document.getElementById("incrementText");
@@ -68,15 +86,11 @@ var model = {
           view.displayMessage("Zatopiłeś okręt przeciwnika!");
           this.shipsSunk++;
 
-          let random = Math.floor(Math.random() * 4);
-          console.log("wylosowany krążwonik nr: ", random);
+          let random = this.randomizeShipDescription();
+          console.log("wylosowany statek nr: ", random);
           const elementy = [shipInfo, shipInfoTwo, shipInfoThree, shipInfoFour];
-          elementy[random].displayMessage();
 
-          // shipInfo.displayMessage();
-          // shipInfoTwo.displayMessage();
-          // shipInfoThree.displayMessage();
-          // shipInfoFour.displayMessage();
+          elementy[random].displayMessage();
         }
 
         return true;
@@ -207,7 +221,12 @@ var controller = {
           "Zatopiłeś wszystkie okręty, po " + this.guesses + " próbach"
         );
 
-        alert("Gratulacje wygrałeś !");
+        const points = document.getElementById("incrementText").innerHTML || 0;
+
+        const name = prompt(
+          "Gratulacje wygrałeś ! Podaj swoje imię do rankingu"
+        );
+        addUserListToLocalStorage({ name: name, points: points });
       }
     }
   },

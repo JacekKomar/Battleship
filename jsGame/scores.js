@@ -1,12 +1,51 @@
-let tableRanking = document.querySelector("#tableRanking");
-let name = prompt("Wpisz swój nick");
-let name2 = name;
+import {
+  USER_RANKING_LIST,
+  addUserListToLocalStorage,
+} from "./localStorageHelpers.js";
 
-let imiona = localStorage.getItem("imiona") || [];
-localStorage.setItem("imiona", [...imiona, name2]);
+const predefinedPlayers = [
+  {
+    name: "Generał Barbarossa",
+    points: 23,
+  },
+  {
+    name: "Kono Przegryw barbażyńca ",
+    points: 2,
+  },
+];
+
+function renderUser(user, index) {
+  return `
+    <tr>
+    <th scope="row">${index + 1}</th>
+    <td>${user.name}</td>
+    <td>${user.points}</td>
+  </tr>
+  `;
+}
+
+function loadUserListFromLocalStorage() {
+  const userList = JSON.parse(localStorage.getItem(USER_RANKING_LIST) || "[]");
+
+  const allUserList = [...userList, ...predefinedPlayers];
+
+  const newUserListsOrder = allUserList.sort(
+    (a, b) => parseInt(a.points) < parseInt(b.points)
+  );
+
+  return newUserListsOrder.map(renderUser).join("");
+}
+
+let tableRanking = document.querySelector("#tableRanking");
+// let name = prompt("Wpisz swój nick");
+// addUserListToLocalStorage({ name: name, points: 1234 });
+// let name2 = name;
+
+// let imiona = localStorage.getItem("imiona") || [];
+// localStorage.setItem("imiona", [...imiona, name2]);
 
 let scoreInRanking = (tableRanking.innerHTML = `
-<table class="table table-dark">
+<table class="table table-dark" id="result-table">
   <thead>
     <tr>
       <th>#</th>
@@ -15,18 +54,14 @@ let scoreInRanking = (tableRanking.innerHTML = `
     </tr>
   </thead>
   <tbody>
+   ${loadUserListFromLocalStorage()}
     <tr>
-      <th scope="row">0</th>
-      <td> ${name}</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
+      <th scope="row">2</th>
       <td>Douglas MacArthur</td>
       <td>29</td>
     </tr>
     <tr>
-      <th scope="row">2</th>
+      <th scope="row">4544</th>
       <td>Hideki Tōjō</td>
       <td>25</td>
     </tr>
