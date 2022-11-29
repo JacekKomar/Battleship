@@ -59,8 +59,8 @@ class WarshipGameModel {
   }
 
   fire(guess) {
-    var element = document.getElementById("incrementText");
-    var value = element.innerHTML;
+    const element = document.getElementById("incrementText");
+    let value = element.innerHTML;
 
     --value;
     if (value <= 0)
@@ -71,9 +71,9 @@ class WarshipGameModel {
 
     document.getElementById("incrementText").innerHTML = value;
 
-    for (var i = 0; i < this.numShips; i++) {
-      var ship = this.ships[i];
-      var index = ship.locations.indexOf(guess);
+    for (let i = 0; i < this.numShips; i++) {
+      const ship = this.ships[i];
+      const index = ship.locations.indexOf(guess);
 
       if (ship.hits[index] === "hit") {
         playSound("sounds/shot.mp3");
@@ -106,7 +106,7 @@ class WarshipGameModel {
   }
 
   isSunk(ship) {
-    for (var i = 0; i < this.shipLength; i++) {
+    for (let i = 0; i < this.shipLength; i++) {
       if (ship.hits[i] !== "hit") {
         return false;
       }
@@ -115,8 +115,8 @@ class WarshipGameModel {
   }
 
   generateShipLocations() {
-    var locations;
-    for (var i = 0; i < this.numShips; i++) {
+    let locations;
+    for (let i = 0; i < this.numShips; i++) {
       do {
         locations = this.generateShip();
       } while (this.collision(locations));
@@ -127,8 +127,8 @@ class WarshipGameModel {
   }
 
   generateShip() {
-    var direction = Math.floor(Math.random() * 2);
-    var row, col;
+    const direction = Math.floor(Math.random() * 2);
+    let row, col;
     if (direction === 1) {
       row = Math.floor(Math.random() * this.boardSize);
       col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
@@ -137,8 +137,8 @@ class WarshipGameModel {
       col = Math.floor(Math.random() * this.boardSize);
     }
 
-    var newShipLocations = [];
-    for (var i = 0; i < this.shipLength; i++) {
+    const newShipLocations = [];
+    for (let i = 0; i < this.shipLength; i++) {
       if (direction === 1) {
         newShipLocations.push(row + "" + (col + i));
       } else {
@@ -150,9 +150,9 @@ class WarshipGameModel {
   }
 
   collision(locations) {
-    for (var i = 0; i < this.numShips; i++) {
-      var ship = this.ships[i];
-      for (var j = 0; j < locations.length; j++) {
+    for (let i = 0; i < this.numShips; i++) {
+      const ship = this.ships[i];
+      for (let j = 0; j < locations.length; j++) {
         if (ship.locations.indexOf(locations[j]) >= 0) {
           return true;
         }
@@ -162,24 +162,26 @@ class WarshipGameModel {
   }
 }
 
-var view = {
-  displayMessage: function (msg) {
-    var messageArea = document.getElementById("messageArea");
+class View {
+  displayMessage(msg) {
+    const messageArea = document.getElementById("messageArea");
     messageArea.innerHTML = msg;
-  },
+  }
 
-  displayHit: function (location) {
-    var cell = document.getElementById(location);
+  displayHit(location) {
+    const cell = document.getElementById(location);
     cell.setAttribute("class", "hit");
-  },
+  }
 
-  displayMiss: function (location) {
-    var cell = document.getElementById(location);
+  displayMiss(location) {
+    const cell = document.getElementById(location);
     cell.setAttribute("class", "miss");
-  },
-};
+  }
+}
 
-var shipInfo = {
+const view = new View();
+
+const shipInfo = {
   displayMessage: function () {
     const showObject = document.querySelector("#showObject");
 
@@ -187,7 +189,7 @@ var shipInfo = {
   },
 };
 
-var shipInfoTwo = {
+const shipInfoTwo = {
   displayMessage: function () {
     const showObject = document.querySelector("#showObjectTwo");
 
@@ -195,7 +197,7 @@ var shipInfoTwo = {
   },
 };
 
-var shipInfoThree = {
+const shipInfoThree = {
   displayMessage: function () {
     const showObject = document.querySelector("#showObjectThree");
 
@@ -203,7 +205,7 @@ var shipInfoThree = {
   },
 };
 
-var shipInfoFour = {
+const shipInfoFour = {
   displayMessage: function () {
     const showObject = document.querySelector("#showObjectFour");
 
@@ -218,10 +220,10 @@ class Controller {
   }
 
   processGuess(guess) {
-    var location = parseGuess(guess);
+    const location = parseGuess(guess);
     if (location) {
       this.guesses++;
-      var hit = this.model.fire(location);
+      const hit = this.model.fire(location);
       if (hit && this.model.shipsSunk === this.model.numShips) {
         view.displayMessage(
           "Zatopiłeś wszystkie okręty, po " + this.guesses + " próbach"
@@ -242,14 +244,14 @@ const model = new WarshipGameModel();
 const controller = new Controller(model);
 
 function parseGuess(guess) {
-  var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
+  const alphabet = ["A", "B", "C", "D", "E", "F", "G"];
 
   if (guess === null || guess.length !== 2) {
     alert("Ups, proszę wpisać literę i cyfrę");
   } else {
     let firstChar = guess.charAt(0);
-    var row = alphabet.indexOf(firstChar);
-    var column = guess.charAt(1);
+    const row = alphabet.indexOf(firstChar);
+    let column = guess.charAt(1);
     if (isNaN(row) || isNaN(column)) {
       alert("Ups to nie są współżędne!");
       return null;
@@ -272,26 +274,21 @@ function parseGuess(guess) {
 }
 
 function handleFireButton() {
-  var guessInput = document.getElementById("guessInput");
-  var guess = guessInput.value.toUpperCase();
+  const guessInput = document.getElementById("guessInput");
+  const guess = guessInput.value.toUpperCase();
   controller.processGuess(guess);
   guessInput.value = "";
 }
 
 function handleFireClick(coords) {
-  var guess = coords.toUpperCase();
+  const guess = coords.toUpperCase();
   controller.processGuess(guess);
-
-  var element = document.getElementById("incrementText");
-  var value = element.innerHTML;
-
-  document.getElementById("incrementText").innerHTML = value;
 }
 
 window.handleFireClick = handleFireClick;
 
 function handleKeyPress(e) {
-  var fireButton = document.getElementById("fireButton");
+  const fireButton = document.getElementById("fireButton");
 
   e = e || window.event;
 
@@ -301,14 +298,14 @@ function handleKeyPress(e) {
   }
 }
 
-window.onload = init;
-
 function init() {
-  var fireButton = document.getElementById("fireButton");
+  const fireButton = document.getElementById("fireButton");
   fireButton.onclick = handleFireButton;
 
-  var guessInput = document.getElementById("guessInput");
+  const guessInput = document.getElementById("guessInput");
   guessInput.onkeypress = handleKeyPress;
 
   model.generateShipLocations();
 }
+
+window.onload = init;
