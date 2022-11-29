@@ -1,6 +1,7 @@
 import { playSound, SOUND_HIT, SOUND_MISS, SOUND_SUNK } from "./audio.js";
 import { addUserListToLocalStorage } from "./localStorageHelpers.js";
 
+// TODO wynieść te 4 obiekty do plików shipData.js
 const shipListOne = {
   id: "Lotniskowiec",
   img: "images/ships/lotniskowiec.jpg",
@@ -26,18 +27,20 @@ const shipListFour = {
   desc: "klasa dużych, silnie opancerzonych i uzbrojonych pełnomorskich okrętów artyleryjskich, stanowiących trzon największych flot wojennych od czasu powstania klasy pancerników w drugiej połowie XIX wieku do okresu II wojny światowej. ",
 };
 
-var model = {
-  boardSize: 7,
-  numShips: 3,
-  shipLength: 3,
-  shipsSunk: 0,
-  randomShipDescriptionList: [],
+class WarshipGameModel {
+  constructor() {
+    this.boardSize = 7;
+    this.numShips = 3;
+    this.shipLength = 3;
+    this.shipsSunk = 0;
+    this.randomShipDescriptionList = [];
 
-  ships: [
-    { locations: [0, 0, 0], hits: ["", "", ""] },
-    { locations: [0, 0, 0], hits: ["", "", ""] },
-    { locations: [0, 0, 0], hits: ["", "", ""] },
-  ],
+    this.ships = [
+      { locations: [0, 0, 0], hits: ["", "", ""] },
+      { locations: [0, 0, 0], hits: ["", "", ""] },
+      { locations: [0, 0, 0], hits: ["", "", ""] },
+    ];
+  }
 
   randomizeShipDescription() {
     let random = Math.floor(Math.random() * 4);
@@ -53,9 +56,9 @@ var model = {
 
       return random;
     }
-  },
+  }
 
-  fire: function (guess) {
+  fire(guess) {
     var element = document.getElementById("incrementText");
     var value = element.innerHTML;
 
@@ -100,18 +103,18 @@ var model = {
     view.displayMessage("Pudło !");
     playSound("sounds/Miss.mp3");
     return false;
-  },
+  }
 
-  isSunk: function (ship) {
+  isSunk(ship) {
     for (var i = 0; i < this.shipLength; i++) {
       if (ship.hits[i] !== "hit") {
         return false;
       }
     }
     return true;
-  },
+  }
 
-  generateShipLocations: function () {
+  generateShipLocations() {
     var locations;
     for (var i = 0; i < this.numShips; i++) {
       do {
@@ -121,9 +124,9 @@ var model = {
     }
 
     console.log(this.ships);
-  },
+  }
 
-  generateShip: function () {
+  generateShip() {
     var direction = Math.floor(Math.random() * 2);
     var row, col;
     if (direction === 1) {
@@ -144,11 +147,11 @@ var model = {
     }
 
     return newShipLocations;
-  },
+  }
 
-  collision: function (locations) {
+  collision(locations) {
     for (var i = 0; i < this.numShips; i++) {
-      var ship = model.ships[i];
+      var ship = this.ships[i];
       for (var j = 0; j < locations.length; j++) {
         if (ship.locations.indexOf(locations[j]) >= 0) {
           return true;
@@ -156,8 +159,8 @@ var model = {
       }
     }
     return false;
-  },
-};
+  }
+}
 
 var view = {
   displayMessage: function (msg) {
@@ -208,15 +211,18 @@ var shipInfoFour = {
   },
 };
 
-var controller = {
-  guesses: 0,
+class Controller {
+  constructor(model) {
+    this.model = model;
+    this.guesses = 0;
+  }
 
-  processGuess: function (guess) {
+  processGuess(guess) {
     var location = parseGuess(guess);
     if (location) {
       this.guesses++;
-      var hit = model.fire(location);
-      if (hit && model.shipsSunk === model.numShips) {
+      var hit = this.model.fire(location);
+      if (hit && this.model.shipsSunk === this.model.numShips) {
         view.displayMessage(
           "Zatopiłeś wszystkie okręty, po " + this.guesses + " próbach"
         );
@@ -229,8 +235,11 @@ var controller = {
         addUserListToLocalStorage({ name: name, points: points });
       }
     }
-  },
-};
+  }
+}
+
+const model = new WarshipGameModel();
+const controller = new Controller(model);
 
 function parseGuess(guess) {
   var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
