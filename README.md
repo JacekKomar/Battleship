@@ -12,7 +12,7 @@ Po zatopieniu każdego z okrętów pojawia się losowy komunikat o zestrzelonym 
 
 ![](/Readme/2.png)
 
-W grze zdobywa się punkty, które są wyświetlone w zakładce Ranking. Dzięki wykorzystaniu localStorage, osiągnięte wyniki zapisują się również po wyłączeniu aplikacji. 
+W grze zdobywa się punkty, które są wyświetlone w zakładce Ranking. Dzięki wykorzystaniu localStorage, osiągnięte wyniki zapisane pozostają również po wyłączeniu aplikacji. 
 
 ## Ilustracje
 
@@ -20,3 +20,6 @@ W grze zdobywa się punkty, które są wyświetlone w zakładce Ranking. Dzięki
 
 Do aplikacji dodane zostały liczne, ręcznie rysowane ilustracje oraz zdjęcia. Pojawiają się one w kolejności losowej. 
 
+## Bootstrap
+
+Dzięki użyciu siatki bootstrapowej aplikacja czytelna jest również na urządzeniach mobilnych.
